@@ -11,7 +11,8 @@ function MealsOverviewScreen({ route, navigation   }) {
    });
 
    useLayoutEffect(() => {
-       const categoryTitle = CATEGORIES.find((category) => category.id === catId).title ;
+       const categoryTitle = CATEGORIES.find(
+           (category) => category.id === catId).title ;
 
        navigation.setOptions({
            title: categoryTitle,
@@ -22,14 +23,14 @@ function MealsOverviewScreen({ route, navigation   }) {
        const item = itemData.item;
 
        const mealItemProps = {
+           id: item.id,
            title: item.title,
            imageUrl: item.imageUrl,
            complexity: item.complexity,
             duration: item.duration,
             affordability: item.affordability,
        };
-       return <MealItem
-           {...mealItemProps}
+       return <MealItem{...mealItemProps}
        />;//here we are rendering the meal item obj
 
    }
